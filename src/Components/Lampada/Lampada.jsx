@@ -1,28 +1,31 @@
 import { useState } from "react";
-import { Picture } from "./LampadaStyle";
-import ImagemGenioMobile from "../../assets/imgs/genio-mobile.png";
-import ImagemDaLampadaMobile from "../../assets/imgs/lampada-mobile.png";
-import ImagemGenioDesktop from "../../assets/imgs/genio-desktop.png";
-import ImagemDaLampadaDesktop from "../../assets/imgs/lampada-desktop.png";
+import { Picture, Conteiner, Titulo } from "./LampadaStyle";
+import { Button } from "../Button/Button";
 
 export const Lampada = () => {
-  const [esfregada, setEsfregada] = useState(false);
+  const [ehEsfregada, setEhEsfregada] = useState(false);
+
   const trocarLampada = () => {
-    setEsfregada(!esfregada);
+    setEhEsfregada(!ehEsfregada);
   };
 
+  const imgDestktop = ehEsfregada
+    ? "/imgs/genio-desktop.png"
+    : "/imgs/lampada-desktop.png";
+  const imgMobile = ehEsfregada
+    ? "/imgs/genio-mobile.png"
+    : "/imgs/lampada-mobile.png";
+
   return (
-    <Picture>
-      <source
-        media="(max-width: 800px)"
-        srcSet={esfregada ? ImagemGenioMobile : ImagemDaLampadaMobile}
-      />
-      <img
-        className="lampada"
-        src={esfregada ?  ImagemGenioDesktop : ImagemDaLampadaDesktop}
-        alt="Lâmpada"
-        onClick={trocarLampada}
-      />
-    </Picture>
+    <Conteiner>
+      <Titulo>
+        {'"Liberte a magia da programação com a Lâmpada do Aladim."'}
+      </Titulo>
+      <Picture>
+        <source media="(max-width: 799px)" srcSet={imgMobile} />
+        <img className="lampada" src={imgDestktop} alt="Lâmpada" />
+      </Picture>
+      <Button onClick={trocarLampada}>Clique aqui</Button>
+    </Conteiner>
   );
 };

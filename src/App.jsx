@@ -1,12 +1,11 @@
 import Main from "./Components/Main/Main";
 import GlobalStyle from "./GlobalStyle";
 
-
-export default function App(){
+export default function App() {
   return (
-    <body>
-      <GlobalStyle/>
-      <Main/>    
-    </body>
-  )
+    <>
+      <GlobalStyle />
+      <Main />
+    </>
+  );
 }

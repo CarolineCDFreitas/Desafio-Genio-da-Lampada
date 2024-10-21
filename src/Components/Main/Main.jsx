@@ -1,12 +1,13 @@
-import { Titulo, Content } from "./MainStyle";
 import { Lampada } from "../Lampada/Lampada";
+import styled from "styled-components";
+
+const Content = styled.main`
+  min-height: 100vh;
+`;
 
 export default function Main() {
   return (
     <Content>
-      <Titulo>
-        {'"Liberte a magia da programação com a Lâmpada do Aladim."'}
-      </Titulo>
       <Lampada />
     </Content>
   );

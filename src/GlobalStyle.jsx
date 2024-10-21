@@ -1,6 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import BackgroundImageDesktop from "./assets/imgs/palacio-desktop.png";
-import BackgroundImageMobile from "./assets/imgs/palacio-mobile.png";
 
 export default createGlobalStyle`
 *{
@@ -10,21 +8,18 @@ box-sizing: border-box;
 }
 
 body{
-display: flex;
-justify-content: center;
-align-items: center;
-background-image: url(${BackgroundImageDesktop});
-background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-
-@media (max-width: 800px) {
-    // height: 100vh;
-    background-image: url(${BackgroundImageMobile});
+    background-image: url("/imgs/palacio-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    min-height: 100vh;
     
-}
+    @media (max-width: 799px) {
+        background-image: url("/imgs/palacio-mobile.png");
+    }
 }
 
-main{
-flex: 1}
-`;
+#root {
+    height: 100%;
+}`
