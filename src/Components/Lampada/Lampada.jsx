@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Picture, Conteiner, Titulo } from "./LampadaStyle";
 import { Button } from "../Button/Button";
+import genioDesktop from "../../assets/imgs/genio-desktop.png";
+import genioMobile from "../../assets/imgs/genio-mobile.png";
+import lampadaDesktop from "../../assets/imgs/lampada-desktop.png";
+import lampadaMobile from "../../assets/imgs/lampada-mobile.png";
 
 export const Lampada = () => {
   const [ehEsfregada, setEhEsfregada] = useState(false);
@@ -9,12 +13,9 @@ export const Lampada = () => {
     setEhEsfregada(!ehEsfregada);
   };
 
-  const imgDestktop = ehEsfregada
-    ? "/imgs/genio-desktop.png"
-    : "/imgs/lampada-desktop.png";
-  const imgMobile = ehEsfregada
-    ? "/imgs/genio-mobile.png"
-    : "/imgs/lampada-mobile.png";
+  const imgDestktop = ehEsfregada ? genioDesktop : lampadaDesktop;
+  const imgMobile = ehEsfregada ? genioMobile : lampadaMobile;
+  const altText = ehEsfregada ? "Gênio saindo da lâmpada" : "Lâmpada mágica";
 
   return (
     <Conteiner>
@@ -23,7 +24,7 @@ export const Lampada = () => {
       </Titulo>
       <Picture>
         <source media="(max-width: 799px)" srcSet={imgMobile} />
-        <img className="lampada" src={imgDestktop} alt="Lâmpada" />
+        <img src={imgDestktop} alt={altText} />
       </Picture>
       <Button onClick={trocarLampada}>Clique aqui</Button>
     </Conteiner>
