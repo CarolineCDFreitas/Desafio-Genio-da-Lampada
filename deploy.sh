@@ -3,14 +3,14 @@
 # abort on errors
 set -e
 
-# Criar o arquivo .nojekyll
-touch .nojekyll
-
 # build
 npm run build
 
 # navigate into the build output directory
 cd dist
+
+# Criar o arquivo .nojekyll
+touch .nojekyll
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
