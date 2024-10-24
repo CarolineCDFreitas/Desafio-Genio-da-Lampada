@@ -8,7 +8,7 @@ box-sizing: border-box;
 }
 
 body{
-    background-image: url("/imgs/palacio-desktop.png");
+    background-image: url("./palacio-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -16,7 +16,7 @@ body{
     min-height: 100vh;
     
     @media (max-width: 799px) {
-        background-image: url("/imgs/palacio-mobile.png");
+        background-image: url("./palacio-mobile.png");
     }
 }
 
