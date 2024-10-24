@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+# Criar o arquivo .nojekyll
+touch .nojekyll
+
 # build
 npm run build
 
